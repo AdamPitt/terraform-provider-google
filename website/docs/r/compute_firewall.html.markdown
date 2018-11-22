@@ -160,17 +160,18 @@ The following arguments are supported:
 
 * `source_service_accounts` -
   (Optional)
-  If source service accounts are specified, the firewall will apply only
-  to traffic originating from an instance with a service account in this
-  list. Source service accounts cannot be used to control traffic to an
+  If a source service account is specified, the firewall will apply only
+  to traffic originating from an instance with the service account in this
+  list. The source service account cannot be used to control traffic to an
   instance's external IP address because service accounts are associated
   with an instance, not an IP address. sourceRanges can be set at the
   same time as sourceServiceAccounts. If both are set, the firewall will
   apply to traffic that has source IP address within sourceRanges OR the
-  source IP belongs to an instance with service account listed in
-  sourceServiceAccount. The connection does not need to match both
+  source IP belongs to an instance with the service account listed in
+  sourceServiceAccounts. The connection does not need to match both
   properties for the firewall to apply. sourceServiceAccounts cannot be
-  used at the same time as sourceTags or targetTags.
+  used at the same time as sourceTags or targetTags. There can be a
+  maximum of one source service account.
 
 * `source_tags` -
   (Optional)
